@@ -2,6 +2,7 @@
   "name": "andrenxt",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://probeike.github.io/andrenxt",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
