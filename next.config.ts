@@ -7,6 +7,8 @@ const productionConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  basePath: '/andrenxt',
+  assetPrefix: '/andrenxt/',
 };
 
 // For local development and testing

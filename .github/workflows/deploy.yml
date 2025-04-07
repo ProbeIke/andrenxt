@@ -36,6 +36,8 @@ jobs:
         run: |
           # Set NODE_ENV to production for static export
           NODE_ENV=production npm run build
+          # Ensure .nojekyll file exists to prevent GitHub Pages from ignoring files that start with an underscore
+          touch out/.nojekyll
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
