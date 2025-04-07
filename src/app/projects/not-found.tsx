@@ -6,7 +6,7 @@ export default function ProjectsNotFound() {
       <div className="planet w-24 h-24 mb-8"></div>
       <h1 className="text-4xl font-bold mb-4 space-glow">Page Not Found</h1>
       <p className="text-xl opacity-80 mb-8 text-center max-w-md">
-        The page you're looking for seems to have drifted into deep space.
+        The page you&apos;re looking for seems to have drifted into deep space.
       </p>
       <Link href="/" className="cosmic-button">
         Return to Home

@@ -60,7 +60,7 @@ export default function Home() {
               </p>
               <p className="mb-4">
                 With expertise in modern web technologies and a keen eye for design, I craft experiences that are
-                both functional and beautiful. I believe in continuous learning and pushing the boundaries of what's possible.
+                both functional and beautiful. I believe in continuous learning and pushing the boundaries of what&apos;s possible.
               </p>
               <div className="grid grid-cols-2 gap-4 mt-6">
                 <div>
