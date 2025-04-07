@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a1029;
+  --foreground: #e0e7ff;
+  --accent-primary: #4f6bff;
+  --accent-secondary: #ff61ab;
+  --grid-color: rgba(64, 130, 255, 0.15);
+  --grid-size: 30px;
+  --grid-line: 1px;
 }
 
 @theme inline {
@@ -12,15 +17,89 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+  background-image:
+    /* Stars - small dots */
+    radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    /* Blueprint grid - horizontal lines */
+    linear-gradient(to bottom, var(--grid-color) var(--grid-line), transparent var(--grid-line)),
+    /* Blueprint grid - vertical lines */
+    linear-gradient(to right, var(--grid-color) var(--grid-line), transparent var(--grid-line));
+  background-size:
+    150px 150px, /* Large stars */
+    100px 100px, /* Medium stars */
+    50px 50px,   /* Small stars */
+    var(--grid-size) var(--grid-size), /* Horizontal grid */
+    var(--grid-size) var(--grid-size); /* Vertical grid */
+  background-position:
+    0 0,
+    25px 25px,
+    12px 12px,
+    0 0,
+    0 0;
+  min-height: 100vh;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.space-glow {
+  text-shadow: 0 0 10px var(--accent-primary), 0 0 20px rgba(79, 107, 255, 0.5);
+}
+
+.planet {
+  border-radius: 50%;
+  box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(79, 107, 255, 0.5);
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+  position: relative;
+  overflow: hidden;
+}
+
+.planet::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 50%);
+}
+
+.blueprint-card {
+  border: 1px solid var(--accent-primary);
+  background-color: rgba(10, 16, 41, 0.7);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px rgba(79, 107, 255, 0.3);
+}
+
+.cosmic-button {
+  background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(79, 107, 255, 0.5);
+}
+
+.cosmic-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(79, 107, 255, 0.8);
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+    margin-left: 0;
+  }
+  50% {
+    width: 100%;
+    margin-left: 0;
+  }
+  100% {
+    width: 0%;
+    margin-left: 100%;
+  }
 }
