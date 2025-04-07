@@ -23,11 +23,10 @@ export default function Home() {
       <section className="flex flex-col md:flex-row items-center justify-between mb-24">
         <div className="md:w-1/2 mb-12 md:mb-0">
           <h2 className="text-5xl font-bold mb-6 space-glow">
-            Exploring the <span className="text-[var(--accent-primary)]">Universe</span> of Technology
+            Exploring the <span className="text-[var(--accent-primary)]">Universe</span> of Andre
           </h2>
           <p className="text-xl mb-8 opacity-80">
-            Welcome to my personal space in the digital cosmos. I craft elegant solutions
-            and explore new technological frontiers.
+            Oh my god I can do <span className="text-[var(--accent-primary)]">ANYTHING</span>
           </p>
           <div className="flex space-x-4">
             <Link href="/projects" className="cosmic-button">View Projects</Link>
@@ -57,9 +56,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row">
             <div className="md:w-2/3 pr-8">
               <p className="mb-4">
-                I'm a passionate developer with a love for creating elegant, efficient solutions to complex problems.
-                My journey in the tech universe began with a fascination for how things work, which evolved into a
-                career building digital experiences that make a difference.
+                I have too much power with vibe coding
               </p>
               <p className="mb-4">
                 With expertise in modern web technologies and a keen eye for design, I craft experiences that are
