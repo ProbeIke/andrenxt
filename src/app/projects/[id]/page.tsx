@@ -80,15 +80,24 @@ const projects = [
     liveDemo: "#",
   },
 ];
-
 export function generateStaticParams() {
   return projects.map((project) => ({
     id: project.id,
   }));
 }
 
-export default function ProjectPage({ params }: { params: { id: string } } & { searchParams?: Record<string, string | string[]> }) {
-  const project = projects.find((p) => p.id === params.id);
+// Using the PageProps interface from our custom type definitions
+// Define the correct type for Next.js 15 page props
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function ProjectPage({ params }: PageProps) {
+  // Await the params Promise to get the id
+  const resolvedParams = await params;
+  const id = resolvedParams.id;
+  
+  const project = projects.find((p) => p.id === id);
   
   if (!project) {
     notFound();
